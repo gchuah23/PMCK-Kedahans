@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putra Medical Centre Kedah (PMCK) | Hospital Bahasa Kedah Alor Setar</title>
+    <meta name="description" content="PMCK Alor Setar - Hospital pertama di Kedah yang bercakap bahasa/loghat Kedah. 24 jam servis, doktor pakar, layanan mesra setempat.">
+    <meta name="keywords" content="Hospital Alor Setar, PMCK Kedah, Hospital bahasa Kedah, Pakar Kedah, Klinik pakar Kedah, Hospital loghat utara, Putra Medical Centre">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Putra Medical Centre Kedah - Hospital Pertama Bahasa Kedah">
+    <meta property="og:description" content="Hospital satu-satunya di Kedah yang bercakap loghat Kedah. Doktor dan staff faham bahasa hang.">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Hospital",
+        "name": "Putra Medical Centre Kedah (PMCK)",
+        "description": "Hospital pertama di Kedah yang bercakap bahasa/loghat Kedah",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "888, Jalan Sekerat, Off Jalan Putra",
+            "addressLocality": "Alor Setar",
+            "addressRegion": "Kedah",
+            "postalCode": "05100",
+            "addressCountry": "MY"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+60-4-734-2888",
+            "contactType": "appointment",
+            "availableLanguage": ["Malay", "English", "Kedah dialect"]
+        },
+        "medicalSpecialty": ["Cardiology", "Paediatrics", "Obstetrics", "Gynaecology", "Surgery", "Orthopaedics", "Anaesthesiology"],
+        "openingHours": "24/7",
+        "hasMap": "https://maps.google.com/?q=Putra+Medical+Centre+Alor+Setar"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0066cc;
+            --secondary-blue: #e6f2ff;
+            --accent-green: #00a651;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --border-light: #e0e0e0;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.2);
+            --transition: all 0.3s ease;
+            --kedah-gold: #f4d03f;
+            --rice-green: #7fb069;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0052a3 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0052a3 0%, #004080 100%);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--accent-green) 0%, #008a42 100%);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-success:hover {
+            background: linear-gradient(135deg, #008a42 0%, #006633 100%);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-kedah {
+            background: linear-gradient(135deg, var(--kedah-gold) 0%, #e6c229 100%);
+            color: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+            font-weight: 700;
+        }
+
+        .btn-kedah:hover {
+            background: linear-gradient(135deg, #e6c229 0%, #d4b11a 100%);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: block;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section with Kedah Slang */
+        .hero-kedah {
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, #d9ebff 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-kedah::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" opacity="0.05"><path fill="%230066cc" d="M0,0 L1200,0 L1200,600 L0,600 Z"/><path fill="%23ffffff" d="M200,150 Q300,100 400,150 T600,150 Q700,200 800,150 T1000,150 L1000,450 Q900,400 800,450 T600,450 Q500,500 400,450 T200,450 Z"/></svg>') center/cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .kedah-headline {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            line-height: 1.3;
+        }
+
+        .kedah-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .language-badge {
+            display: inline-block;
+            background: var(--kedah-gold);
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Announcement Section */
+        .announcement {
+            background: linear-gradient(135deg, var(--kedah-gold) 0%, #e6c229 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .announcement h2 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .announcement p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .announcement-quote {
+            font-style: italic;
+            font-weight: 600;
+            margin-top: 1rem;
+            padding: 15px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Updated Info Section */
+        .updated-info {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent-green);
+        }
+
+        .info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .info-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .info-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Doctor Profiles */
+        .doctors-updated {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .doctor-category {
+            margin-bottom: 3rem;
+        }
+
+        .doctor-category h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--kedah-gold);
+        }
+
+        .doctor-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .doctor-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .doctor-name {
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-title {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-specialty {
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        /* Contact Info */
+        .contact-updated {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--secondary-blue) 0%, #d9ebff 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .contact-method {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .contact-detail {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: none;
+            }
+
+            .kedah-headline {
+                font-size: 2.75rem;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .kedah-headline {
+                font-size: 3.25rem;
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Sticky WhatsApp */
+        .sticky-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 999;
+            background: var(--accent-green);
+            color: var(--white);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 3px solid var(--white);
+        }
+
+        .sticky-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0,166,81,0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span>🏥</span> PMCK - Hospital Bahasa Kedah
+            </div>
+            <div class="nav-links">
+                <a href="#announcement">Pengumuman</a>
+                <a href="#doctors">Doktor</a>
+                <a href="#services">Servis</a>
+                <a href="#contact">Hubungi</a>
+            </div>
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Kedah Slang -->
+    <section class="hero-kedah">
+        <div class="container">
+            <div class="hero-content animate-on-scroll">
+                <div class="language-badge">🇲🇾 LOGHAT KEDAH</div>
+                <h1 class="kedah-headline">The Only Hospital That Speaks the Way You Want to Be Understood</h1>
+                <p class="kedah-subtitle">"Kalau sakit, mai la ke PMCK. Kami cakap bahasa Kedah, bukan bahasa hospital. Depa ni doktor tapi gaya macam adik-beradik kita jugak!"</p>
+                <div class="hero-cta">
+                    <a href="https://wa.me/601110523600" class="btn btn-success">📱 WhatsApp Sekarang</a>
+                    <a href="tel:+6047342888" class="btn btn-primary">📞 Call 04-7342888</a>
+                    <a href="#appointment" class="btn btn-kedah">📝 Book Janji Temu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Announcement Section -->
+    <section id="announcement" class="announcement">
+        <div class="container animate-on-scroll">
+            <h2>🗞️ PENGUMUMAN KHAS UNTUK WARGA KEDAH</h2>
+            <p><strong>ALOR SETAR – Putra Medical Centre Kedah (PMCK)</strong> telah menjadi <strong>Hospital PERTAMA di negeri ini menggunakan bahasa pertuturan setempat (loghat Kedah)</strong> di media sosial dan semasa konsultasi.</p>
+            <p>Inisiatif ini direka khusus untuk komuniti luar bandar agar:</p>
+            <ul style="text-align: left; max-width: 600px; margin: 1rem auto;">
+                <li>🔓 Merobos halangan komunikasi perubatan</li>
+                <li>🤝 Menjadi lebih mesra dan "personalised"</li>
+                <li>📣 Memastikan tiada siapa yang ketinggalan maklumat kesihatan penting</li>
+            </ul>
+            <p class="announcement-quote">
+                “Healthcare isn’t just about medicine – it’s about connecting with people. By speaking our community’s natural language, we build trust and closeness.”
+                <br>— Jurucakap PMCK
+            </p>
+        </div>
+    </section>
+
+    <!-- Updated Contact & Location Info -->
+    <section id="contact" class="contact-updated">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Maklumat Sahih PMCK</h2>
+                <p>Alamat, telefon & pendaftaran hospital – tepat & terkini</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-method">Alamat Sahih</div>
+                    <div class="contact-detail">888, Jalan Sekerat, Off Jalan Putra</div>
+                    <div class="contact-detail">05100 Alor Setar, Kedah, Malaysia</div>
+                    <div class="contact-note">15 minit dari PLUS E178 Alor Setar Utara</div>
+                </div>
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-method">Talian 24 Jam</div>
+                    <div class="contact-detail">+604-734 2888</div>
+                    <div class="contact-detail">+6011-1052 3600</div>
+                    <div class="contact-detail">+6011-1052 3688</div>
+                    <div class="contact-note">Ambulans & kecemasan</div>
+                </div>
+                <div class="contact-card animate-on-scroll">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-method">Pendaftaran</div>
+                    <div class="contact-detail">PMCK Berhad</div>
+                    <div class="contact-detail">No. Pendaftaran: 200001029676 (532283-M)</div>
+                    <div class="contact-note">Unique Luxury Sdn Bhd (215791-U)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Doctor Profiles -->
+    <section id="doctors" class="doctors-updated">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Senarai Doktor Sebenar PMCK</h2>
+                <p>Doktor pakar & MO bertauliah – dikemas kini daripada laman rasmi PMCK</p>
+            </div>
+            
+            <div class="doctor-category animate-on-scroll">
+                <h3>🫀 Cardiology (Pakar Jantung)</h3>
+                <div class="doctor-list">
+                    <div class="doctor-item">
+                        <div class="doctor-name">Col. (R) Dr. Mohamad Anuar Bin Mohamad</div>
+                        <div class="doctor-title">Resident Consultant Physician & Interventional Cardiologist</div>
+                        <div class="doctor-specialty">MMC: 39273 | Ext: 2209 | Room: R26</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dato' Dr. Chan Jit Wooi</div>
+                        <div class="doctor-title">Visiting Consultant Physician & Cardiologist</div>
+                        <div class="doctor-specialty">MMC: 25729 | Ext: 2212 | Room: R23</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Kantha Rao Narasamuloo</div>
+                        <div class="doctor-title">Visiting Consultant Physician & Interventional Cardiologist</div>
+                        <div class="doctor-specialty">MMC: 42195 | Ext: Shared</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-category animate-on-scroll">
+                <h3>👶 Paediatrics (Pakar Kanak-Kanak)</h3>
+                <div class="doctor-list">
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Norhaila Binti Mohamad Adenam</div>
+                        <div class="doctor-title">Resident Consultant Paediatrician</div>
+                        <div class="doctor-specialty">MMC: 43250 | Ext: 2207 | Room: R28</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Lee Beng Suan</div>
+                        <div class="doctor-title">Resident Consultant Paediatrician</div>
+                        <div class="doctor-specialty">MMC: 43616 | Ext: 2220 | Room: R31</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Afifah Binti Hussin</div>
+                        <div class="doctor-title">Resident Consultant Paediatrician</div>
+                        <div class="doctor-specialty">MMC: 46961 | Ext: 2206 | Room: R27</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-category animate-on-scroll">
+                <h3>🤱 Obstetrics & Gynaecology (Pakar O&G)</h3>
+                <div class="doctor-list">
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dato' Dr. Lim Tze Chou</div>
+                        <div class="doctor-title">Resident Consultant Obstetrician & Gynecologist (Clinical Director)</div>
+                        <div class="doctor-specialty">MMC: 47269 | Ext: 2204 | Room: R10</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Yeoh Gim Hooi</div>
+                        <div class="doctor-title">Resident Consultant Obstetrician & Gynecologist Surgeon</div>
+                        <div class="doctor-specialty">MMC: 33822 | Ext: 2010 | Room: R1</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Tan Yi Pin</div>
+                        <div class="doctor-title">Resident Consultant Obstetrician & Gynecologist</div>
+                        <div class="doctor-specialty">MMC: 56670 | Ext: 2217 | Room: R17</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-category animate-on-scroll">
+                <h3>🦴 Orthopaedics (Pakar Tulang & Sendi)</h3>
+                <div class="doctor-list">
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Abdul Samad Bin Lazim</div>
+                        <div class="doctor-title">Resident Consultant Orthopaedics Surgeon & Traumatology Surgeon</div>
+                        <div class="doctor-specialty">MMC: 36895 | Ext: 2020 | Room: R11</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dato' Dr. Suresh Chopra</div>
+                        <div class="doctor-title">Resident Consultant Orthopaedics & Traumatology Surgeon</div>
+                        <div class="doctor-specialty">MMC: 27238 | Ext: 2205 | Room: R30</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Lim Tze Chwen</div>
+                        <div class="doctor-title">Resident Consultant Orthopaedics & Traumatology Surgeon (Head of Clinical Services)</div>
+                        <div class="doctor-specialty">MMC: 50765 | Ext: 2018 | Room: R9</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-category animate-on-scroll">
+                <h3>🔪 General Surgery (Pakar Pembedahan)</h3>
+                <div class="doctor-list">
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Syed Johaidy Bin Syed Ariffin</div>
+                        <div class="doctor-title">Resident Consultant General Surgeon (Deputy Clinical Director)</div>
+                        <div class="doctor-specialty">MMC: 25708 | Ext: 2011 | Room: R2</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Ng Kok Joo</div>
+                        <div class="doctor-title">Resident Consultant General & Laparoscopic Surgeon</div>
+                        <div class="doctor-specialty">MMC: 31294 | Ext: 2017 | Room: R8</div>
+                    </div>
+                    <div class="doctor-item">
+                        <div class="doctor-name">Dr. Tan Boon Lee</div>
+                        <div class="doctor-title">Resident Consultant General & Advanced Laparoscopic Surgeon</div>
+                        <div class="doctor-specialty">MMC: 49670A | Ext: 2221 | Room: R21</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Services -->
+    <section id="services" class="updated-info">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Servis Lengkap PMCK</h2>
+                <p>Senarai servis sebenar - dikemaskini daripada laman web rasmi</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card animate-on-scroll">
+                    <h3>🏥 Servis Pembedahan</h3>
+                    <ul class="info-list">
+                        <li>General Surgery (Colonoscopy, Endoscopy)</li>
+                        <li>Laparoscopic Cholecystectomy & Appendicectomy</li>
+                        <li>Orthopaedics (Arthroplasty, Sports injury)</li>
+                        <li>Obstetrics & Gynaecology (Normal/Caesarean delivery)</li>
+                        <li>Ophthalmology (Cataract operations)</li>
+                        <li>ENT surgeries</li>
+                        <li>Oral & Maxillofacial surgery</li>
+                    </ul>
+                </div>
+                <div class="info-card animate-on-scroll">
+                    <h3>⚕️ Servis Perubatan</h3>
+                    <ul class="info-list">
+                        <li>24-Hour Emergency Services</li>
+                        <li>Cardiology (Non-invasive diagnostics, Angiography)</li>
+                        <li>Paediatrics & Neonatal Care</li>
+                        <li>Internal Medicine</li>
+                        <li>Anaesthesiology & Critical Care</li>
+                        <li>Dermatology</li>
+                        <li>Sports Medicine</li>
+                        <li>Nephrology & Haemodialysis</li>
+                    </ul>
+                </div>
+                <div class="info-card animate-on-scroll">
+                    <h3>🔬 Servis Diagnostik</h3>
+                    <ul class="info-list">
+                        <li>640-Slices CT Scan</li>
+                        <li>MRI 1.5 Tesla</li>
+                        <li>Mammography</li>
+                        <li>Ultrasound & Fluoroscopy</li>
+                        <li>Laboratory Investigation</li>
+                        <li>24-Hour Pharmacy</li>
+                        <li>Physiotherapy</li>
+                        <li>ICU & High Dependency Unit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Hours & Visiting Info -->
+    <section class="updated-info">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>Waktu Operasi & Lawatan</h2>
+                <p>Maklumat rasmi untuk pesakit dan waris</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card animate-on-scroll">
+                    <h3>🕐 Waktu Operasi</h3>
+                    <ul class="info-list">
+                        <li><strong>Hospital:</strong> 24 jam / 7 hari seminggu</li>
+                        <li><strong>Klinik Pakar:</strong> Isnin - Ahad (8 pg - 5 ptg)</li>
+                        <li><strong>Farmasi:</strong> 24 jam</li>
+                        <li><strong>Kecemasan:</strong> Sentiasa buka</li>
+                    </ul>
+                </div>
+                <div class="info-card animate-on-scroll">
+                    <h3>👥 Waktu Lawatan</h3>
+                    <ul class="info-list">
+                        <li><strong>Ward Am:</strong> 10:00 pagi - 10:00 malam</li>
+                        <li><strong>HDU:</strong> 12:00 - 2:00 ptg & 5:00 - 9:00 malam</li>
+                        <li><strong>Selepas 10 malam:</strong> 1 waris sahaja (daftar dengan sekuriti)</li>
+                        <li><strong>Parkir Percuma:</strong> Isnin-Jumaat 7pg-7ptg, Sabtu 7pg-5ptg</li>
+                    </ul>
+                </div>
+                <div class="info-card animate-on-scroll">
+                    <h3>🚗 Akses & Pengangkutan</h3>
+                    <ul class="info-list">
+                        <li><strong>Penerbangan:</strong> 20 minit dari Lapangan Terbang Alor Setar</li>
+                        <li><strong>Kereta/Bas:</strong> 15 minit dari PLUS E178 Alor Setar Utara</li>
+                        <li><strong>Keretapi:</strong> 10 minit dari Stesen Alor Setar</li>
+                        <li><strong>Perkhidmatan:</strong> Ambulans boleh diaturkan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section id="appointment" class="footer-cta">
+        <div class="container animate-on-scroll">
+            <h2>Your Health, Our Priority - In Your Language</h2>
+            <p>Kesihatan Anda, Keutamaan Kami - Dalam Bahasa Anda</p>
+            <p style="font-style: italic; margin-top: 1rem;">"Kalau hang sakit, jangan segan-segan. Kami dok sini nak tolong. Cakap ja loghat hang, kami paham!"</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/601110523600" class="btn btn-white">📱 WhatsApp Loghat Kedah</a>
+                <a href="tel:+6047342888" class="btn btn-white">📞 Call Pakar Kita</a>
+                <a href="mailto:pmc@putramedicentre.com.my" class="btn btn-outline">✉️ Email Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Putra Medical Centre Kedah (PMCK) - Hospital Bahasa Kedah Pertama di Negeri ini</p>
+            <p>888, Jalan Sekerat, Off Jalan Putra, 05100 Alor Setar, Kedah | No. Pendaftaran: 200001029676 (532283-M)</p>
+            <p>24/7 Care in Your Language | Healthcare That Understands You | #PMCKedah #HospitalBahasaKedah</p>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp -->
+    <a href="https://wa.me/601110523600" class="sticky-whatsapp" aria-label="WhatsApp PMCK in Kedah Language">
+        📱
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            alert('Menu akan buka - semua servis dalam bahasa Kedah!');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Service card clicks with Kedah touch
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                alert('Nak tau lebih lanjut? WhatsApp kami terus - kami akan explain dalam bahasa Kedah!');
+            });
+            card.style.cursor = 'pointer';
+        });
+
+        // Add loading="lazy" to all images
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+    </script>
+</body>
+</html>
